@@ -105,12 +105,11 @@ where c.address = '서울';
 select name, reservedRoom
 from (select name, reserveDate, (roomNum) as reservedRoom
 		from reservation
-        where roomNum > 1001) as reservationInfo;
+        where roomNum = 1001) as reservationInfo;
 -- reservationInfo의 row에서 name, reservedRoom 출력
 
 /*
 	쿼리 실행 순서
-    
     reservation 테이블에서 roomNum이 1001 보다 큰 레코드를 먼저 찾은 후에 roomNum 필드값 1씩 증가
     해당 쿼리에 결과 집합 reservationInfo 임시 테이블로 만들어 진다. (내부 쿼리, 서브쿼리)
     외부 쿼리에서는 이렇게 만들어진 임시 테이블에서 name, reservedRoom 필드만을 선택해서 결과 집합을 보여주게 된다.
