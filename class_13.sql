@@ -117,6 +117,23 @@ from employees as a
 where emp_no in (select emp_no
 				from titles as b
                 where title = 'Senior Engineer');
+
+-- 최고 연봉을 받는 직원의 정보 출력                
+select *
+from employees as e
+where e.emp_no in (
+					select emp_no
+                    from salaries as s
+                    where salary = (select max(salary) from salaries)
+                    );
+                    
+-- 현재 'd003' 부서에서 근무 중인 직원 조회
+select *
+from employees
+where emp_no in (select emp_no
+				from dept_emp
+                where dept_no = 'd003'
+                and to_date = '9999-01-01');
                 
 -- 인라인 뷰
 -- d001 부서의 역대 매니저 출력
@@ -132,6 +149,15 @@ from employees as a, (select *
 						from titles
 						where title = 'Engineer') as b
 where a.emp_no = b.emp_no;
+
+-- 최고 연봉을 받는 직원의 정보 출력
+select *
+from employees as e
+where e.emp_no in (
+					select emp_no
+                    from salaries as s
+                    where salary = (select max(salary) from salaries)
+                    );
                         
 select * from titles;
 
@@ -142,3 +168,9 @@ select a.emp_no, a.first_name, (select max(salary)
 								where a.emp_no = b.emp_no
 								group by emp_no) as '최고 연봉'
 from employees as a;
+
+-- 부서 매니저들의 생년월일 조회
+select d.dept_no, d.emp_no, (select e.birth_date
+								from employees as e
+                                where d.emp_no = e.emp_no) as '생년월일'
+from dept_manager as d;
