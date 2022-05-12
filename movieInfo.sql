@@ -8,7 +8,8 @@ CREATE TABLE movie (
 	title VARCHAR(30) NOT NULL PRIMARY KEY,
     releaseDate DATE NOT NULL,
     starScore FLOAT,
-    genre VARCHAR(10)
+    genre VARCHAR(10),
+    image VARCHAR(30)
 );
 
 DROP TABLE score;
@@ -55,50 +56,51 @@ CREATE TABLE actor(
     birthYear INT NOT NULL,
     height INT NOT NULL,
     weight INT NOT NULL,
-    partner VARCHAR(20)
+    partner VARCHAR(20),
+    image varchar(20)
 );
 
 SELECT * FROM movie;
-INSERT INTO movie VALUES ('반지의 제왕', '2001-12-31', 9.84, '판타지');
-INSERT INTO movie VALUES ('아이언맨', '2008-04-30', 8.4, '액션');
-INSERT INTO movie VALUES ('극한직업', '2019-01-23', 9.2, '코미디');
-INSERT INTO movie VALUES ('범죄도시', '2017-10-03', 9.28, '액션');
-INSERT INTO movie VALUES ('토르: 라그나로크', '2017-10-25', 9.03, '액션');
-INSERT INTO movie VALUES ('베테랑', '2015-08-05', 9.24, '액션');
-INSERT INTO movie VALUES ('바람', '2009-11-26', 9.28, '드라마');
-INSERT INTO movie VALUES ('히말라야', '2015-12-16', 8.67, '드라마');
-INSERT INTO movie VALUES ('부산행', '2016-07-20', 8.6, '액션');
-INSERT INTO movie VALUES ('어벤져스', '2012-04-26', 8.8, '액션');
+INSERT INTO movie VALUES ('반지의 제왕', '2001-12-31', 9.84, '판타지', "반지의 제왕.jpg");
+INSERT INTO movie VALUES ('아이언맨', '2008-04-30', 8.4, '액션', "아이언맨.jpg");
+INSERT INTO movie VALUES ('극한직업', '2019-01-23', 9.2, '코미디', "극한직업.jpg");
+INSERT INTO movie VALUES ('범죄도시', '2017-10-03', 9.28, '액션', "범죄도시.jpg");
+INSERT INTO movie VALUES ('토르: 라그나로크', '2017-10-25', 9.03, '액션', "토르.png");
+INSERT INTO movie VALUES ('베테랑', '2015-08-05', 9.24, '액션', "베테랑.jpg");
+INSERT INTO movie VALUES ('바람', '2009-11-26', 9.28, '드라마', "바람.jpg");
+INSERT INTO movie VALUES ('히말라야', '2015-12-16', 8.67, '드라마', "히말라야.jpg");
+INSERT INTO movie VALUES ('부산행', '2016-07-20', 8.6, '액션', "부산행.jpg");
+INSERT INTO movie VALUES ('어벤져스', '2012-04-26', 8.8, '액션', "어벤져스.jpg");
 
 SELECT * FROM actor;
-INSERT INTO actor VALUES (1, '로버트 다우니 주니어', 1965, 174, 65, '수잔 다우니');
-INSERT INTO actor VALUES (2, '기네스 팰트로', 1972, 175, 61, NULL);
-INSERT INTO actor VALUES (3, '테렌스 하워드', 1969, 184, 75, NULL);
-INSERT INTO actor VALUES (4, '이하늬', 1983, 173, 56, NULL);
-INSERT INTO actor VALUES (5, '류승룡', 1970, 175, 72, NULL);
-INSERT INTO actor VALUES (6, '진선규', 1999, 177, 70, '박보경');
-INSERT INTO actor VALUES (7, '이동휘', 1985, 179, 67, NULL);
-INSERT INTO actor VALUES (8, '공명', 1994, 183, 73, NULL);
-INSERT INTO actor VALUES (9, '일라이저 우드', 1981, 168, 73, NULL);
-INSERT INTO actor VALUES (10, '숀 애스틴', 1971, 170, 67, NULL);
-INSERT INTO actor VALUES (11, '앤디 서키스', 1964, 171, 65, NULL);
-INSERT INTO actor VALUES (12, '마동석', 1971, 178, 100, NULL);
-INSERT INTO actor VALUES (14, '윤계상', 1978, 182, 77, '차혜영');
-INSERT INTO actor VALUES (15, '최귀화', 1978, 181, 72, NULL);
-INSERT INTO actor VALUES (16, '조재윤', 1974, 174, 75, '조은애');
-INSERT INTO actor VALUES (17, '유아인', 1986, 179, 71, NULL);
-INSERT INTO actor VALUES (18, '황정민', 1999, 180, 75, '김미혜');
-INSERT INTO actor VALUES (19, '유해진', 1970, 174, 65, NULL);
-INSERT INTO actor VALUES (20, '오달수', 1968, 176, 68, NULL);
-INSERT INTO actor VALUES (21, '정우', 1981, 180, 70, '김유미');
-INSERT INTO actor VALUES (22, '손호준', 1984, 176, 67, NULL);
-INSERT INTO actor VALUES (23, '황정음', 1985, 167, 48, NULL);
-INSERT INTO actor VALUES (24, '라미란', 1975, 162, 53, '김진구');
-INSERT INTO actor VALUES (25, '공유', 1979, 184, 74, NULL);
-INSERT INTO actor VALUES (26, '정유미', 1983, 163, 43, NULL);
-INSERT INTO actor VALUES (27, '최우식', 1990, 181, 65, NULL);
-INSERT INTO actor VALUES (28, '크리스 에반스', 1981, 183, 79, NULL);
-INSERT INTO actor VALUES (29, '스칼릿 조핸슨', 1984, 160, 57, NULL);
+INSERT INTO actor VALUES (1, '로버트 다우니 주니어', 1965, 174, 65, '수잔 다우니', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (2, '기네스 팰트로', 1972, 175, 61, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (3, '테렌스 하워드', 1969, 184, 75, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (4, '이하늬', 1983, 173, 56, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (5, '류승룡', 1970, 175, 72, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (6, '진선규', 1999, 177, 70, '박보경', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (7, '이동휘', 1985, 179, 67, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (8, '공명', 1994, 183, 73, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (9, '일라이저 우드', 1981, 168, 73, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (10, '숀 애스틴', 1971, 170, 67, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (11, '앤디 서키스', 1964, 171, 65, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (12, '마동석', 1971, 178, 100, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (14, '윤계상', 1978, 182, 77, '차혜영', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (15, '최귀화', 1978, 181, 72, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (16, '조재윤', 1974, 174, 75, '조은애', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (17, '유아인', 1986, 179, 71, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (18, '황정민', 1999, 180, 75, '김미혜', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (19, '유해진', 1970, 174, 65, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (20, '오달수', 1968, 176, 68, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (21, '정우', 1981, 180, 70, '김유미', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (22, '손호준', 1984, 176, 67, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (23, '황정음', 1985, 167, 48, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (24, '라미란', 1975, 162, 53, '김진구', '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (25, '공유', 1979, 184, 74, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (26, '정유미', 1983, 163, 43, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (27, '최우식', 1990, 181, 65, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (28, '크리스 에반스', 1981, 183, 79, NULL, '로버트 다우니 주니어.jpg');
+INSERT INTO actor VALUES (29, '스칼릿 조핸슨', 1984, 160, 57, NULL, '로버트 다우니 주니어.jpg');
 
 
 SELECT * FROM score;
@@ -205,7 +207,17 @@ SELECT a.*, r.title
 FROM actor a
 INNER JOIN role r
 ON a.actorName = r.actorName
-WHERE a.actorName = '정우';
+WHERE a.actorName = '황정민';
+
+-- 배우 이름 검색 -> 출연 영화명 + 배우 정보 출력
+SELECT *
+FROM actor a LEFT JOIN role r
+ON a.actorName = r.actorName
+UNION DISTINCT
+SELECT *
+FROM actor a RIGHT JOIN role r
+ON a.actorName = r.actorName;
+
 
 -- 영화 최신순 출력
 SELECT *
@@ -213,8 +225,33 @@ FROM movie
 ORDER BY releaseDate DESC;
 
 -- 영화명 검색 -> 영화 정보 출력(영화 정보 + 배역 정보)
-SELECT *
+SELECT *, r.roleName
 FROM movie m
 INNER JOIN role r
 ON m.title = r.title
+INNER JOIN score s
+ON m.title = s.title
 WHERE m.title = '아이언맨';
+
+SELECT *
+FROM actor a
+INNER JOIN role r
+ON a.actorName = r.actorName
+WHERE a.actorName = '마동석';
+
+SELECT *
+FROM movie;
+
+SELECT *
+FROM actor
+WHERE actorName = '황정민';
+
+INSERT INTO movie VALUES ('어벤져스', '2012-04-26', 8.8, '액션', "어벤져스.jpg");
+
+UPDATE movie SET sales = '8.5' WHERE title = '아이언맨';
+
+SELECT *
+FROM actor a
+INNER JOIN role r
+ON a.actorName = r.actorName
+WHERE a.actorName ='마동석';
